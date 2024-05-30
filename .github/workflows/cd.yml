@@ -1,0 +1,25 @@
+name: CD
+on:
+  push:
+    branches: [master]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.123.8'
+
+      - name: Build site
+        run: hugo --minify
+
+      - name: Login to Registry
+        run: docker login ${{ secrets.REGISTRY_NAME }} -u ${{ secrets.REGISTRY_USER }} -p ${{ secrets.REGISTRY_PASSWORD }}
+
+      - name: Build and Push Docker Image
+        run: |
+          docker build -t ${{ secrets.REGISTRY_NAME }}/sdk-lsdrevamped-net:latest .
+          docker push ${{ secrets.REGISTRY_NAME }}/sdk-lsdrevamped-net:latest
