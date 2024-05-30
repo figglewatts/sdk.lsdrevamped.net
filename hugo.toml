@@ -1,0 +1,18 @@
+baseURL = 'https://sdk.lsdrevamped.net/'
+languageCode = 'en-us'
+title = 'LSD: Revamped SDK'
+theme = "hugo-book"
+enableGitInfo = true
+
+[params]
+BookTheme = 'auto'
+BookLogo = 'logo-trans.png'
+BookRepo = 'https://github.com/figglewatts/sdk.lsdrevamped.net'
+BookComments = false
+BookFavicon = 'logo-trans.png'
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
