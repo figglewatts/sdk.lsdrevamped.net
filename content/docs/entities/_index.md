@@ -69,6 +69,8 @@ Refer to the [Lua API](../lua/#interactiveobject) for how to write scripts for t
   - View: When the player is within 'Interaction Distance' and the player camera view frustum contains the object position (i.e. the object is in view).
   - None: This entity doesn't have an interaction, `interact()` won't be detected or called. Use this if you don't need it - it will save a bit of performance.
 - Interaction Distance: The distance in units at which the player can interact with this object.
+- Animated Object: The [AnimatedObject](../entities/#animatedobject) we can control from the Lua of this object.
+- Call Start On Enable: Whether the Lua `start()` function is called when this object is enabled.
 
 ### LBDChunk
 
