@@ -34,6 +34,8 @@ You can create a Dream in the Assets menu with `Create > LSDR SDK > Dream`.
 - EnvironmentOffset (integer)
   - The offset into the [DreamEnvironmentSequence](#dreamenvironmentsequence) this dream uses for its environment. This allows dreams to have environment variation on the same day.
   - Negative offsets are not supported.
+- HasEnvironmentEffects (boolean)
+  - If false, this dream will not have environment effects such as clouds, sun etc.
 - Environments ([DreamEnvironmentSequence](#dreamenvironmentsequence))
   - Controls which [DreamEnvironment](#dreamenvironment) this dream uses. The current day number added to EnvironmentOffset is used as an index into this sequence.
 - DreamPrefabPath (string)
